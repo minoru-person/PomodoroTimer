@@ -3,4 +3,4 @@
 
 Browser based Pomodoro Tracker. 
 
-# Opera and Firefox Browser Compatible. (2021 Feb)
+#Opera and Firefox Browser Compatible. (2021 Feb)

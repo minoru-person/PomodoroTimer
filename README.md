@@ -1,4 +1,4 @@
-# Pomodoro Timer
+# Pomodoro Timer (Browser Based)
 2021 Pomodor Timer and Tracker 
 
 Browser based Pomodoro Tracker. 

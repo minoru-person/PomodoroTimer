@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Repeat Timer  
+    </title>
+    <style>
+      #timer {
+	  background-color: rgb(255,79,213);
+	  font-size: 100px;
+	  width: 500px;
+      }
+
+      #countDown {
+	  font-size:50px;
+      }
+
+      #elapsedTime {
+	  font-size: 30px;
+      }
+
+      #pomodoro {
+	  /*
+       position:fixed;
+       top: 400px;
+	 */	  
+      }
+
+      .timeBox {
+	  width: 60px;
+      }
+    </style>
+    <script src="jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <p>####################################</p>
+    <p>This timer uses Jquery.</p>
+    <div id="audioCheck">
+      <span>Check audio file</span>
+      <button id="testAudio">Test Alarm</button>
+      <p>####################################</p>  
+    </div>
+
+    <div id="instructionBox">
+      <h2>2021 Pomodoro Tracker</h2>
+      <p>Please input number, then press "ON" (e.g. 25)</p> 
+      <input id="duration">
+      <br/>
+      <br/>
+      <button id="startTimer">ON</button>
+      <button id="reloadTimer">OFF</button>
+      <br/>
+      <div id="elapsedTime"></div>
+      <span id="timer"></span><span id="countDown"></span>
+    </div>
+
+    <div id="pomodoro">
+      <br/>
+      <br/>
+
+      <button id="freeze">Freeze Form</button>
+      <button id="unfreeze">Unfreeze Form</button>
+
+      <br/>
+      <br/>
+
+      <label>Total</label>
+      <span id="total1"></span>
+
+      <br/>
+      <br/>
+      
+      <label for="username">Study 01: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study1time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+      
+      <br/>
+      <br/>
+
+      <label for="username">Study 02: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study2time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 03: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study3time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 04: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study4time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <laber for="breaktime">Long Break</label>
+      <input type="checkbox">
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 05: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study5time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 06: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study6time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 07: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study7time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 08: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study8time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <laber for="breaktime">Long Break</label>
+      <input type="checkbox">
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 09: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study9time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 10: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study10time">
+      <label>Subject: </label>
+      <input type="text" class="studysub" >
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 11: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study11time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <label for="username">Study 12: </label>
+      <input type="checkbox" class="studycheckbox">
+      <label>Duration: </label>
+      <input class="timeBox" type="number" min="0" max="999" id="study12time">
+      <label>Subject: </label>
+      <input type="text" class="studysub">
+
+      <br/>
+      <br/>
+
+      <laber for="breaktime">Long Break</label>
+      <input type="checkbox">
+      <br/>
+      <br/>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
